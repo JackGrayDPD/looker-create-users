@@ -1,0 +1,16 @@
+{
+  "name": "looker-create-multiple-users",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@looker/sdk": "^21.20.0",
+    "@looker/sdk-node": "^21.20.0",
+    "@looker/sdk-rtl": "^21.3.1"
+  }
+}
