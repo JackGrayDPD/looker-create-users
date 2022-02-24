@@ -1,0 +1,2 @@
+# looker-create-users
+A simple node script that takes a JSON of new users and creates them as users in Looker. Run ```node main [FLAGS]```. Use ```-f=filename``` to provide a filename (default: users.json. Must be a .json file. Do not include ".json" in the value you provide) and ```-d``` to create the users as disabled initially.
