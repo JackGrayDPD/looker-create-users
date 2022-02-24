@@ -5,8 +5,7 @@ const {
 	NodeSettingsIniFile,
 	NodeSession
 } = require('@looker/sdk-node');
-
-const localConfig = './looker.ini';
+const localConfig = './looker/looker.ini';
 
 /** Settings retrieved from the configuration file */
 const settings = new NodeSettingsIniFile('', localConfig, 'Looker');

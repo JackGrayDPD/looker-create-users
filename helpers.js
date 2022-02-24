@@ -1,12 +1,12 @@
-const sdk = require('./looker/sdk');
+const sdk = require('./looker/sdk')
 
-const createUser = (user) => {
+module.exports.createUser = (user) => {
 	return new Promise((resolve, reject) => {
 		sdk.ok(sdk.create_user({
 			first_name: user.first_name,
 			last_name: user.last_name,
 			is_disabled: user.is_disabled,
-			locale: user.locale
+			locale: 'en'
 		}))
 			.then(new_user => {
 				resolve(new_user);
@@ -16,7 +16,7 @@ const createUser = (user) => {
 			})
 	})
 }
-const createUserCredentials = (user_id, user_email) => {
+module.exports.createUserCredentials = (user_id, user_email) => {
 	return new Promise((resolve, reject) => {
 		sdk.ok(sdk.create_user_credentials_email(user_id, { email: user_email }))
 			.then(new_user_email_credentials => {

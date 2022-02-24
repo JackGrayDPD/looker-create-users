@@ -1,32 +1,12 @@
-const { createUser, createUserCredentials } = require('./createUserHelpers');
+const { createUser, createUserCredentials } = require('./helpers');
 
-/* createMultipleUsers(user_array) expects:
-{
-		"user_array": [
-				{
-						"first_name": "Jack",
-						"last_name": "Test6",
-						"email": "jack.graytest6@dpdgroup.co.uk",
-						"is_disabled": "false",
-						"locale": "en"
-				},
-				{
-						"first_name": "Jack",
-						"last_name": "Test7",
-						"email": "jack.graytest7@dpdgroup.co.uk",
-						"is_disabled": "false",
-						"locale": "en"
-				}
-		]
-}
-*/
-module.exports.createMultipleUsers = (user_array) => {
+module.exports.createMultipleUsers = (user_array, disabled) => {
 	let new_users = [];
 	let waiting = user_array.length;
 	return new Promise((resolve, reject) => {
 		user_array.forEach(user => {
-			const { first_name, last_name, email, is_disabled, locale } = user;
-			createUser({ first_name, last_name, is_disabled, locale })
+			const { first_name, last_name, email } = user;
+			createUser({ first_name, last_name, disabled })
 				.then(new_user => {
 					createUserCredentials(new_user.id, email)
 						.then(new_user_email => {
